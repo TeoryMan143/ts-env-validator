@@ -24,9 +24,11 @@ const envSchema = z.object({
 
 envSchema.parse(process.env)
 
-namespace NodeJS {
-  interface ProcessEnv
-    extends z.infer<typeof envSchema> {}
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv
+      extends z.infer<typeof envSchema> {}
+  }
 }`;
 
   return (

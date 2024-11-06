@@ -25,9 +25,9 @@ function FileForm() {
 
         if (eqIndex === -1) return;
 
-        return key.substring(0, eqIndex - 1);
+        return key.substring(0, eqIndex);
       })
-      .filter(k => k !== undefined) as string[];
+      .filter(k => k !== undefined);
 
     setEnvKeys(keys);
   };
